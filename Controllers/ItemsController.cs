@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Play.Catalog.Service.Repositories;
 using Play.Catalog.Service.Entities;
@@ -6,9 +10,9 @@ namespace Play.Catalog.Service.Controllers;
 
 [ApiController]
 [Route("items")]
-public class ItemsController : ControllerBase
+public class ItemsController(IItemsRepository itemsRepository) : ControllerBase
 {
-    private readonly ItemsRepository _itemsRepository = new();
+    private readonly IItemsRepository _itemsRepository = itemsRepository;
     
     [HttpGet]
     public async Task<IEnumerable<ItemDto>> GetAsync()
