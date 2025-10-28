@@ -3,4 +3,13 @@
 GET {{Play.Catalog.Service_HostAddress}}/weatherforecast/
 Accept: application/json
 
-###
+
+
+
+
+    
+
+    
+    
+
+        
